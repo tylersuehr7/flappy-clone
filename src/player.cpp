@@ -41,3 +41,7 @@ void Player::reset() {
 bool Player::check_collision_with_ground() {
     return m_bounds.y > m_world.size.y - m_bounds.height;
 }
+
+const Rectangle& Player::get_bounds() {
+    return m_bounds;
+}

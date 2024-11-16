@@ -16,4 +16,5 @@ public:
     void draw(void);
     void reset(void);
     bool check_collision_with_ground(void);
+    const Rectangle& get_bounds();
 };
