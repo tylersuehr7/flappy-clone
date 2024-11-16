@@ -14,12 +14,15 @@ void GameRunner::run(const int argc, const char **argv) {
 
     Sounds::load_sounds();
 
-    Game game;
+    Game game((World) {
+        .background_color=RAYWHITE, 
+        .size={.x=windowWidth, .y=windowHeight}, 
+        .gravity=-9.81f}
+    );
 
     while (!WindowShouldClose()) {
         game.on_update();
         BeginDrawing();
-        ClearBackground(BLACK);
         game.on_render();
         EndDrawing();
     }
