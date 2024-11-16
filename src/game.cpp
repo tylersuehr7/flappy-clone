@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "sounds.hpp"
 
 static Font s_font;
 static float s_text_spacing;
@@ -29,6 +30,9 @@ void Game::on_update() {
         m_player.update();
         for (auto &pipe : m_pipes) {
             pipe.update(m_game_speed);
+            if (pipe.is_passed_player()) {
+                increment_score(1);
+            }
         }
     }
 
@@ -78,5 +82,14 @@ void Game::reset_game_objects() {
     for (size_t i = 0; i < num_pipes; i++) {
         Pipe pipe(m_world, i * Pipe::s_spacing);
         m_pipes.push_back(pipe);
+    }
+}
+
+void Game::increment_score(const int points) {
+    m_score += points;
+    if (m_score % 10 == 0) {
+        Sounds::play_level_up();
+    } else {
+        Sounds::play_score();
     }
 }

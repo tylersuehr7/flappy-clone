@@ -16,4 +16,5 @@ public:
     Pipe(const World &world, const Rectangle bounds);
     void update(const float speed);
     void draw(void);
+    bool is_passed_player(void);
 };

@@ -21,4 +21,5 @@ public:
     void on_render(void);
 private:
     void reset_game_objects(void);
+    void increment_score(const int points);
 };

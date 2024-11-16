@@ -44,3 +44,7 @@ void Pipe::draw() {
         Pipe::s_color
     );
 }
+
+bool Pipe::is_passed_player() {
+    return !m_passed && (m_passed = m_bounds.x < m_world.size.x / 2.0f);
+}
