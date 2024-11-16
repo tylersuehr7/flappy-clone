@@ -86,7 +86,7 @@ void Game::on_render() {
 
     s_text_buffers.offset.x = 10.0f;
     s_text_buffers.offset.y = 10.0f;
-    DrawTextEx(s_font, TextFormat("Score: %d", m_score), s_text_buffers.offset, 20, s_text_spacing, RED);
+    DrawTextEx(s_font, TextFormat("SCORE: %d", m_score), s_text_buffers.offset, 14, s_text_spacing, LIGHTGRAY);
 }
 
 void Game::reset_game_objects() {
