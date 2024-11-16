@@ -5,7 +5,7 @@
 
 constexpr const int windowWidth = 600;
 constexpr const int windowHeight = 520;
-constexpr const int fps = 60;
+constexpr const int fps = 120;
 
 void GameRunner::run(const int argc, const char **argv) {
     InitWindow(windowWidth, windowHeight, "Flappy");
