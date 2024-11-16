@@ -3,7 +3,7 @@
 #include <raylib.h>
 
 typedef struct {
-    Vector2 size;
-    Color background_color;
-    float gravity;
+    const Vector2 size;
+    const Color background_color;
+    const float gravity;
 } World;
