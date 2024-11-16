@@ -1,6 +1,6 @@
-#include <iostream>
+#include "game_runner.hpp"
 
-int main(void) {
-    std::cout << "Hello, World!\n";
+int main(const int argc, const char **argv) {
+    GameRunner::run(argc, argv);
     return 0;
 }
