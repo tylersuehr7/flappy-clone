@@ -15,7 +15,7 @@ void GameRunner::run(const int argc, const char **argv) {
     Sounds::load_sounds();
 
     Game game((World) {
-        .background_color=RAYWHITE, 
+        .background_color=RAYWHITE,
         .size={.x=windowWidth, .y=windowHeight}, 
         .gravity=-9.81f}
     );
