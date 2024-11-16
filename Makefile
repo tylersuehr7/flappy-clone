@@ -3,7 +3,11 @@ BUILD_DIR=./.build
 EXECUTABLE=flappy
 
 build:
-	cmake -S ${SOURCE_DIR} -B ${BUILD_DIR}
+	cmake -DCMAKE_BUILD_TYPE=Debug -S ${SOURCE_DIR} -B ${BUILD_DIR}
+	cmake --build ${BUILD_DIR}
+
+build-release:
+	cmake -DCMAKE_BUILD_TYPE=Release -S ${SOURCE_DIR} -B ${BUILD_DIR}
 	cmake --build ${BUILD_DIR}
 	
 clean:
