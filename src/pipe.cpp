@@ -48,3 +48,19 @@ void Pipe::draw() {
 bool Pipe::is_passed_player() {
     return !m_passed && (m_passed = m_bounds.x < m_world.size.x / 2.0f);
 }
+
+bool Pipe::check_collion_with_player(const Rectangle &player_bounds) {
+    const Rectangle top_pipe_bounds = {
+        m_bounds.x, 0,
+        m_bounds.width,
+        m_bounds.height - m_bounds.y
+    };
+
+    const Rectangle bottom_pipe_bounds = {
+        m_bounds.x, -m_bounds.y + m_world.size.y - m_bounds.height,
+        m_bounds.width,
+        m_bounds.height + m_bounds.y
+    };
+
+    return CheckCollisionRecs(player_bounds, top_pipe_bounds) || CheckCollisionRecs(player_bounds, bottom_pipe_bounds);
+}

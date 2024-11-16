@@ -31,12 +31,18 @@ void Game::on_update() {
 
         for (auto &pipe : m_pipes) {
             pipe.update(m_game_speed);
+
             if (pipe.is_passed_player()) {
                 increment_score(1);
             }
+
+            if (pipe.check_collion_with_player(m_player.get_bounds())) {
+                Sounds::play_die();
+                m_game_over = true;
+            }
         }
 
-        if (m_player.check_collision_with_ground()) {
+        if (!m_game_over && m_player.check_collision_with_ground()) {
             Sounds::play_die();
             m_game_over = true;
         }

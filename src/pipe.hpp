@@ -17,4 +17,5 @@ public:
     void update(const float speed);
     void draw(void);
     bool is_passed_player(void);
+    bool check_collion_with_player(const Rectangle &player_bounds);
 };
