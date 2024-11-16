@@ -7,8 +7,7 @@ Player::Player(const World &world):
     m_bounds((Rectangle) {.height=10, .width=10}), 
     m_velocity(0.0f),
     m_color(BLACK) {
-    m_bounds.x = (world.size.x / 2) - m_bounds.width;
-    m_bounds.y = (world.size.y / 2) - m_bounds.height;
+    reset();
 }
 
 Player::Player(const World &world, const Rectangle bounds):
@@ -31,6 +30,11 @@ void Player::update() {
 
 void Player::draw() {
     DrawRectangleRec(m_bounds, m_color);
+}
+
+void Player::reset() {
+    m_bounds.x = (m_world.size.x / 2) - m_bounds.width;
+    m_bounds.y = (m_world.size.y / 2) - m_bounds.height;
 }
 
 void Player::set_color(const Color color) {

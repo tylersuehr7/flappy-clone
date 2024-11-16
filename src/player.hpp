@@ -14,5 +14,6 @@ public:
     Player(const World &world, const Rectangle bounds);
     void update(void);
     void draw(void);
+    void reset(void);
     void set_color(const Color color);
 };

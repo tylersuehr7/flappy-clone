@@ -20,5 +20,5 @@ public:
     void on_update(void);
     void on_render(void);
 private:
-    void setup_pipes(void);
+    void reset_game_objects(void);
 };
