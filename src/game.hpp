@@ -9,4 +9,6 @@ private:
     int m_score;
 public:
     Game();
+    void on_update(void);
+    void on_render(void);
 };

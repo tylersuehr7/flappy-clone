@@ -1,4 +1,5 @@
 #include "game_runner.hpp"
+#include "game.hpp"
 #include "sounds.hpp"
 #include <raylib.h>
 
@@ -13,9 +14,13 @@ void GameRunner::run(const int argc, const char **argv) {
 
     Sounds::load_sounds();
 
+    Game game;
+
     while (!WindowShouldClose()) {
+        game.on_update();
         BeginDrawing();
         ClearBackground(BLACK);
+        game.on_render();
         EndDrawing();
     }
 
