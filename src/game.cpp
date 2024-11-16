@@ -28,16 +28,24 @@ void Game::on_update() {
 
     if (!m_game_over && m_started) {
         m_player.update();
+
         for (auto &pipe : m_pipes) {
             pipe.update(m_game_speed);
             if (pipe.is_passed_player()) {
                 increment_score(1);
             }
         }
+
+        if (m_player.check_collision_with_ground()) {
+            Sounds::play_die();
+            m_game_over = true;
+        }
     }
 
     if (m_game_over && (IsKeyPressed(KEY_ENTER))) {
         reset_game_objects();
+        m_game_over = false;
+        m_score = 0;
     }
 }
 

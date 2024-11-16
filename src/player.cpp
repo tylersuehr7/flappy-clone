@@ -35,8 +35,9 @@ void Player::draw() {
 void Player::reset() {
     m_bounds.x = (m_world.size.x / 2) - m_bounds.width;
     m_bounds.y = (m_world.size.y / 2) - m_bounds.height;
+    m_velocity = 0.0f;
 }
 
-void Player::set_color(const Color color) {
-    m_color = color;
+bool Player::check_collision_with_ground() {
+    return m_bounds.y > m_world.size.y - m_bounds.height;
 }

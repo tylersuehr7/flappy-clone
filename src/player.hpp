@@ -15,5 +15,5 @@ public:
     void update(void);
     void draw(void);
     void reset(void);
-    void set_color(const Color color);
+    bool check_collision_with_ground(void);
 };
