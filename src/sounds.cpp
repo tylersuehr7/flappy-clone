@@ -20,7 +20,7 @@ void Sounds::unload_sounds() {
     UnloadSound(g_die_sound);
 }
 
-void play_level_up() {
+void Sounds::play_level_up() {
     PlaySound(g_level_up_sound);
 }
 
